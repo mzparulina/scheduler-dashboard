@@ -27,13 +27,20 @@ const data = [
 ];
 
 class Dashboard extends Component {
-  state = {
-    loading: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: false,
+      focused: null
+    };
+
+    this.selectPanel = this.selectPanel.bind(this);
+  }
 
   selectPanel = function(id) {
-    this.setState(e => ({
-      focused: id
+    this.setState(previousState => ({
+      focused: previousState.focused !== null ? null : id
     }));
   };
 
