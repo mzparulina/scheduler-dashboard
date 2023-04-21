@@ -28,7 +28,7 @@ const data = [
 
 class Dashboard extends Component {
   state = {
-    loading: true
+    loading: false
   };
 
   render() {
